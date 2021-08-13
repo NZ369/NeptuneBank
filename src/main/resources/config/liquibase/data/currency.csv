@@ -1,0 +1,8 @@
+currency_id;currency_name;units_per_CAD;CAD_per_unit;transaction_fee
+CAD;Canadian Dollar;1.00000;1.00000;0.01500
+USD;US Dollar;0.80386;1.24398;
+EUR;Euro;0.67713;1.47681;
+JPY;Japanese Yen;88.59443;0.01128;
+GBP;British Pound;0.58179;1.71881;
+AUD;Australian Dollar;1.07231;0.93256;
+INR;Indian Rupee;59.59595;0.01677;

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Currency.
+    -->
+    <changeSet id="20210619133636-1" author="jhipster">
+        <createTable tableName="currency">
+            <column name="currency_id" type="varchar(255)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="currency_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="units_per_CAD" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="CAD_per_unit" type="double">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="20210619133636-2" author="rbassot">
+        <addColumn tableName="currency">
+            <column name="transaction_fee" type="double"/>
+
+        <!-- the above adds the transaction_fee column to the existing 'currency' table.  -->
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="20210619133636-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <changeSet id="20210619133636-1-data" author="jhipster" runOnChange="true">
+        <loadData
+                  file="config/liquibase/data/currency.csv"
+                  separator=";"
+                  tableName="currency">
+            <column name="currency_id" type="string"/>
+            <column name="currency_name" type="string"/>
+            <column name="units_per_CAD" type="numeric"/>
+            <column name="CAD_per_unit" type="numeric"/>
+            <column name="transaction_fee" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>
