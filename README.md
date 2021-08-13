@@ -1,5 +1,7 @@
 # Neptune Bank App
 
+This is a project that focuses on web application development, DevOps integration strategies, and automated testing.
+
 This application was generated using JHipster 6.2.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v6.2.0](https://www.jhipster.tech/documentation-archive/v6.2.0).
 
 ## Requirements
